@@ -17,8 +17,6 @@ public class MyUserDetailsService implements UserDetailsService {
      * details */
     @Override
     public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
-//        return new User("foo", "foo", new ArrayList<>());
-        // Right now, we are just returning a user with username and password 'foo'
         User userToReturn = searchUserFromList(username);
         if (userToReturn == null){
             throw new UsernameNotFoundException("Invalid User");
