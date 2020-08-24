@@ -39,6 +39,7 @@ public class JwtUtil {
     /* Most important method: Creating a JWT token after extracting username from User object */
     public String generateToken(UserDetails userDetails) {
         Map<String, Object> claims = new HashMap<>();   // You can pass in anything you want to put in the payload. Right now it is an empty map
+        claims.put("sub", userDetails.getUsername() );
         return createToken(claims, userDetails.getUsername());
     }
 

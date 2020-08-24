@@ -34,7 +34,7 @@ public class SecurityConfigurer extends WebSecurityConfigurerAdapter {
     }
 
     @Override
-    @Bean
+    @Bean   // you're using the authenticationManager inside the controller class. In order to use it in the controller, you need to create a bean first
     public AuthenticationManager authenticationManagerBean() throws Exception {
         return super.authenticationManagerBean();
     }

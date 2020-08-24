@@ -17,7 +17,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 
-@Component
+@Component // Filter being used to intercept an HTTP req and extract the JWT out of it
 public class JwtRequestFilter extends OncePerRequestFilter {
 
     @Autowired
@@ -54,7 +54,7 @@ public class JwtRequestFilter extends OncePerRequestFilter {
                 SecurityContextHolder.getContext().setAuthentication(usernamePasswordAuthenticationToken);
             }
         }
-        chain.doFilter(request, response);
+        chain.doFilter(request, response); // handing off control to the rest of the filters
     }
 
 }

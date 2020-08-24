@@ -25,9 +25,10 @@ public class MainController {
     private AuthenticationManager authenticationManager;    // This object authenticates users
 
     @Autowired
+    
     private MyUserDetailsService userDetailsService;
 
-    @RequestMapping({ "/hello" })
+    @RequestMapping("/hello")
     public String hello() {
         return "<h1> Helloooooooo!!! </h1>";
     }
